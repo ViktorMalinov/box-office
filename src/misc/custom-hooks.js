@@ -1,6 +1,6 @@
 import { useReducer, useEffect } from 'react';
 
-function showsRedicer(prevState, action) {
+function showsReducer(prevState, action) {
   switch (action.type) {
     case 'ADD': {
       return [...prevState, action.showId];
@@ -30,5 +30,5 @@ function usePersistedReducer(reducer, initialState, key) {
 }
 
 export function useShows(key = 'shows') {
-  usePersistedReducer(showsRedicer, [], key);
+  return usePersistedReducer(showsReducer, [], key);
 }
